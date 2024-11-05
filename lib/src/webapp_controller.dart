@@ -90,6 +90,7 @@ class WebappController extends ValueNotifier<WebappValue> {
   void selectTab(int index) {
     value.tabIndex = index;
     currentTab = tabs[index];
+    notifyListeners();
   }
 
   List<WebappWebview> getWebviews() {
@@ -99,11 +100,6 @@ class WebappController extends ValueNotifier<WebappValue> {
     }
     return webviews;
   }
-
-  // InAppWebViewController? webViewController;
-  // void setWebviewController(int index) {
-  //   webViewController = tabs[index].webViewController;
-  // }
 
   void loadUrl(String url) {
     currentTab?.webViewController?.loadUrl(urlRequest: URLRequest(url: WebUri(url)));
