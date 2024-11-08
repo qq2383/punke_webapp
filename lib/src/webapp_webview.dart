@@ -77,8 +77,7 @@ class _WebappWebviewState extends State<WebappWebview>
         
       }
       Webapp.prototype.postMessage = function(name, args, callee) {
-          var data = JSON.stringify(args);
-          window.flutter_inappwebview.callHandler('_webapp', name, data)
+          window.flutter_inappwebview.callHandler('_webapp', name, JSON.stringify(args))
             .then(function(data) {
               if (callee) {
                 callee(data);

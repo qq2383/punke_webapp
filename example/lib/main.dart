@@ -11,6 +11,10 @@ void main() {
     return {'version': '0.0.3'};
   });
 
+  webappConfig.delegate.onConsoleMessage = (controller, message) {
+    print(message);
+  };
+
   runApp(const MyApp());
 }
 
