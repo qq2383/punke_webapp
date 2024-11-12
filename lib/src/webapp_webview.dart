@@ -34,7 +34,6 @@ class _WebappWebviewState extends State<WebappWebview>
       mediaPlaybackRequiresUserGesture: false,
       allowsInlineMediaPlayback: true,
       iframeAllow: "camera; microphone",
-      supportMultipleWindows: true,
       iframeAllowFullscreen: true);
 
   PullToRefreshController? pullToRefreshController;

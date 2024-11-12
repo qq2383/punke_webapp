@@ -60,8 +60,10 @@ class WebappController extends ValueNotifier<WebappValue> {
 
   Future<void> setFullScreen(bool fill) async {
     fullScreen = fill;
-    await windowManager.setFullScreen(fullScreen);
-    max = await windowManager.isMaximized();
+    if (webappConfig.isDesktop()) {
+      await windowManager.setFullScreen(fullScreen);
+      max = await windowManager.isMaximized();
+    }
   }
 
   int get tabIndex => value.tabIndex;
